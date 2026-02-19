@@ -16,4 +16,7 @@ hours = st.number_input("Study Hours", min_value=0.0, max_value=24.0, step=0.5)
 # Prediction button
 if st.button("Predict Score"):
     prediction = model.predict([[hours]])
-    st.success(f"Predicted Score: {prediction[0]:.2f}")
+score = prediction.flatten()[0]
+
+st.success(f"Predicted Score: {score:.2f}")
+
